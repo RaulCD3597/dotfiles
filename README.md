@@ -5,6 +5,7 @@
 In order to run this configuration we need to install:
 
 - alacritty
+- starship
 - neovim
 - fzf
 - zoxide
@@ -18,6 +19,7 @@ In order to run this configuration we need to install:
 ```bash
 # on macOS
 brew install alacritty
+brew install starship
 brew install fzf
 brew install neovim
 brew install zoxide
