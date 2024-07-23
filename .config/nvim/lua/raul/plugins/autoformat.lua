@@ -1,5 +1,6 @@
 return { -- Autoformat
 	"stevearc/conform.nvim",
+	commit = "9b26e81",
 	lazy = false,
 	keys = {
 		{
@@ -20,7 +21,6 @@ return { -- Autoformat
 			local disable_filetypes = { c = true, cpp = true }
 			return {
 				timeout_ms = 500,
-				async = false,
 				lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
 			}
 		end,
