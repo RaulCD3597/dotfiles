@@ -15,6 +15,7 @@ In order to run this configuration we need to install:
 - a nerd font (jetbrains mono nerd font suggested)
 - tmux
 - tmux plugin manager (tpm)
+- lazygit
 
 ```bash
 # on macOS
@@ -30,6 +31,7 @@ brew search '/font-.*jetbrains.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} b
 nvm install 18 # or any other version
 brew install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+brew install lazygit
 ```
 
 ## Usage
