@@ -34,6 +34,7 @@ return { -- Autocompletion
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-buffer", -- source for text in buffer
+		"mlaursen/vim-react-snippets",
 	},
 	config = function()
 		-- See `:help cmp`
@@ -85,14 +86,14 @@ return { -- Autocompletion
 				--    $body
 				--  end
 				--
-				-- <c-l> will move you to the right of each of the expansion locations.
-				-- <c-h> is similar, except moving you backwards.
-				["<C-l>"] = cmp.mapping(function()
+				-- <c-L> will move you to the right of each of the expansion locations.
+				-- <c-H> is similar, except moving you backwards.
+				["<C-L>"] = cmp.mapping(function()
 					if luasnip.expand_or_locally_jumpable() then
 						luasnip.expand_or_jump()
 					end
 				end, { "i", "s" }),
-				["<C-h>"] = cmp.mapping(function()
+				["<C-H>"] = cmp.mapping(function()
 					if luasnip.locally_jumpable(-1) then
 						luasnip.jump(-1)
 					end

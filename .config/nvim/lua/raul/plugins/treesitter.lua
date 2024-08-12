@@ -1,9 +1,6 @@
 return { -- Highlight, edit, and navigate code
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
-	dependencies = {
-		"windwp/nvim-ts-autotag",
-	},
 	opts = {
 		ensure_installed = {
 			"bash",
@@ -41,7 +38,6 @@ return { -- Highlight, edit, and navigate code
 			additional_vim_regex_highlighting = { "ruby" },
 		},
 		indent = { enable = true, disable = { "ruby" } },
-		autotag = { enable = true },
 		incremental_selection = {
 			enable = true,
 			keymaps = {
