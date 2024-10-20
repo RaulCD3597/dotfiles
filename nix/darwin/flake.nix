@@ -26,6 +26,8 @@
 	  pkgs.fzf
 	  pkgs.zoxide
 	  pkgs.nodejs_20
+	  pkgs.ripgrep
+	  pkgs.lazygit
       ];
 
       homebrew = {
@@ -38,6 +40,8 @@
 	      "Xcode" = 497799835;
 	  };
 	  onActivation.cleanup = "zap";
+	  onActivation.autoUpdate = true;
+	  onActivation.upgrade = true;
       };
 
       fonts.packages = [
@@ -63,6 +67,19 @@
 	  ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
 	done
 	    '';
+
+      system.defaults = {
+	  dock.autohide = true;
+	  dock.persistent-apps = [
+	    "${pkgs.alacritty}/Applications/Alacritty.app"
+	    "/Applications/Android Studio.app"
+	    "/Applications/Xcode.app"
+	    "/Applications/Safari.app"
+	  ];
+	  finder.FXPreferredViewStyle = "clmv";
+	  loginwindow.GuestEnabled = false;
+	  NSGlobalDomain.AppleICUForce24HourTime = true;
+      };
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;
