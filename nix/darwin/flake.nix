@@ -28,6 +28,9 @@
 	  pkgs.nodejs_20
 	  pkgs.ripgrep
 	  pkgs.lazygit
+	  pkgs.cocoapods
+	  pkgs.discord
+	  pkgs.flutter
       ];
 
       homebrew = {
@@ -35,7 +38,9 @@
 	  brews = [
 	      "mas"
 	  ];
-	  casks = [];
+	  casks = [
+	    "google-chrome"
+	  ];
 	  masApps = {
 	      "Xcode" = 497799835;
 	  };
@@ -79,6 +84,7 @@
 	  finder.FXPreferredViewStyle = "clmv";
 	  loginwindow.GuestEnabled = false;
 	  NSGlobalDomain.AppleICUForce24HourTime = true;
+	  NSGlobalDomain.AppleInterfaceStyle = "Dark";
       };
 
       # Auto upgrade nix package and the daemon service.
