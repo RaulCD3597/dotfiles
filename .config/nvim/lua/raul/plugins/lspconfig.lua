@@ -176,6 +176,7 @@ return { -- LSP Configuration & Plugins
 					},
 				},
 			},
+			nil_ls = {},
 		}
 
 		-- Ensure the servers and tools above are installed

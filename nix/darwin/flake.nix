@@ -31,6 +31,7 @@
 	  pkgs.cocoapods
 	  pkgs.discord
 	  pkgs.flutter
+	  pkgs.cargo
       ];
 
       homebrew = {
@@ -39,6 +40,7 @@
 	      "mas"
 	  ];
 	  casks = [
+	    "docker"
 	    "google-chrome"
 	  ];
 	  masApps = {
@@ -85,6 +87,7 @@
 	  loginwindow.GuestEnabled = false;
 	  NSGlobalDomain.AppleICUForce24HourTime = true;
 	  NSGlobalDomain.AppleInterfaceStyle = "Dark";
+	  NSGlobalDomain."com.apple.swipescrolldirection" = false;
       };
 
       # Auto upgrade nix package and the daemon service.
