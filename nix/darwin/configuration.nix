@@ -18,6 +18,7 @@
 	pkgs.discord
 	pkgs.flutter
 	pkgs.cargo
+	pkgs.sketchybar
     ];
 
     homebrew = import ./homebrew.nix // { enable = true; };
@@ -42,11 +43,15 @@
 	    AppleICUForce24HourTime = true;
 	    AppleInterfaceStyle = "Dark";
 	    "com.apple.swipescrolldirection" = false;
+	    _HIHideMenuBar = true;
 	};
     };
 
     # Auto upgrade nix package and the daemon service.
-    services.nix-daemon.enable = true;
+    services = {
+      nix-daemon.enable = true;
+      sketchybar.enable = true;
+    };
     # nix.package = pkgs.nix;
 
     # Necessary for using flakes on this system.

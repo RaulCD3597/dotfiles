@@ -25,6 +25,7 @@ in
     xdg.configFile.nvim.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/nvim";
     xdg.configFile.alacritty.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/alacritty";
     xdg.configFile.starship.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/starship";
+    xdg.configFile.sketchybar.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/sketchybar";
     home.file = {
       ".zshrc".source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.zshrc";
       ".tmux.conf".source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.tmux.conf";
