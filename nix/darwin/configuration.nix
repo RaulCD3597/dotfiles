@@ -21,40 +21,29 @@
 	pkgs.cargo
     ];
 
-    homebrew = {
-	enable = true;
-	brews = [
-	    "mas"
-	];
-	casks = [
-	  "docker"
-	  "google-chrome"
-	];
-	masApps = {
-	    "Xcode" = 497799835;
-	};
-	onActivation.cleanup = "zap";
-	onActivation.autoUpdate = true;
-	onActivation.upgrade = true;
-    };
+    homebrew = import ./homebrew.nix // { enable = true; };
 
     fonts.packages = [
 	(pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
 
     system.defaults = {
-	dock.autohide = true;
-	dock.persistent-apps = [
-	  "${pkgs.alacritty}/Applications/Alacritty.app"
-	  "/Applications/Android Studio.app"
-	  "/Applications/Xcode.app"
-	  "/Applications/Safari.app"
-	];
+	dock = {
+	    autohide = true;
+	    persistent-apps = [
+	      "${pkgs.alacritty}/Applications/Alacritty.app"
+	      "/Applications/Android Studio.app"
+	      "/Applications/Xcode.app"
+	      "/Applications/Safari.app"
+	    ];
+	};
 	finder.FXPreferredViewStyle = "clmv";
 	loginwindow.GuestEnabled = false;
-	NSGlobalDomain.AppleICUForce24HourTime = true;
-	NSGlobalDomain.AppleInterfaceStyle = "Dark";
-	NSGlobalDomain."com.apple.swipescrolldirection" = false;
+	NSGlobalDomain = {
+	    AppleICUForce24HourTime = true;
+	    AppleInterfaceStyle = "Dark";
+	    "com.apple.swipescrolldirection" = false;
+	};
     };
 
     # Auto upgrade nix package and the daemon service.
