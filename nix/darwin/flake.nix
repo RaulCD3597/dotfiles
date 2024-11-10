@@ -8,9 +8,10 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager, mac-app-util }:
   let
     configuration = { pkgs, config, ... }: {
       nixpkgs.config.allowUnfree = true;
@@ -55,26 +56,6 @@
       fonts.packages = [
           (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       ];
-
-      system.activationScripts.applications.text = let
-	env = pkgs.buildEnv {
-	  name = "system-applications";
-	  paths = config.environment.systemPackages;
-	  pathsToLink = "/Applications";
-	};
-      in
-	pkgs.lib.mkForce ''
-	# Set up applications.
-	echo "setting up /Applications..." >&2
-	rm -rf /Applications/Nix\ Apps
-	mkdir -p /Applications/Nix\ Apps
-	find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-	while read src; do
-	  app_name=$(basename "$src")
-	  echo "copying $src" >&2
-	  ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-	done
-	    '';
 
       system.defaults = {
 	  dock.autohide = true;
@@ -124,6 +105,7 @@
     darwinConfigurations."mbpro" = nix-darwin.lib.darwinSystem {
       modules = [
 	configuration
+	mac-app-util.darwinModules.default
 	nix-homebrew.darwinModules.nix-homebrew
 	{
           nix-homebrew = {
@@ -138,7 +120,8 @@
        {
 	  home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.raulcamacho = import ./home.nix;
+	  home-manager.verbose = true;
+          home-manager.users.raulcamacho.imports = [ ./home.nix mac-app-util.homeManagerModules.default ];
        }
       ];
     };
