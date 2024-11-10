@@ -8,7 +8,6 @@
 	pkgs.tmux
 	pkgs.alacritty
 	pkgs.go
-	pkgs.stow
 	pkgs.starship
 	pkgs.fzf
 	pkgs.zoxide
@@ -66,6 +65,6 @@
 
     users.users.raulcamacho = {
 	name = "raulcamacho";
-	home = "/Users/raulcamacho/";
+	home = "/Users/raulcamacho";
     };
 }
