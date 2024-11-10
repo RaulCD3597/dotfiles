@@ -41,6 +41,7 @@ return { -- Autoformat
 			yaml = { { "prettierd", "prettier" } },
 			json = { { "prettierd", "prettier" } },
 			markdown = { { "prettierd", "prettier" } },
+			nix = { "nixpkgs-fmt" },
 		},
 	},
 }

@@ -6,12 +6,13 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
   let
     configuration = { pkgs, config, ... }: {
-
       nixpkgs.config.allowUnfree = true;
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
@@ -110,8 +111,43 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+
+      users.users.raulcamacho = {
+          name = "raulcamacho";
+          home = "/Users/raulcamacho/";
+      };
     };
-  in
+    homeconfig = { config, pkgs, ... }:
+    {
+    # Home Manager needs a bit of information about you and the
+    # paths it should manage.
+    # home.username = "raulcamacho";
+    # home.homeDirectory = "/Users/raulcamacho";
+
+    # This value determines the Home Manager release that your
+    # configuration is compatible with. This helps avoid breakage
+    # when a new Home Manager release introduces backwards
+    # incompatible changes.
+    #
+    # You can update Home Manager without changing this value. See
+    # the Home Manager release notes for a list of state version
+    # changes in each release.
+    home.stateVersion = "24.05";
+
+    # Let Home Manager install and manage itself.
+    programs.home-manager.enable = true;
+    
+    programs.git = {
+      enable = true;
+      userName = "Raul Camacho";
+      userEmail = "raulcd3597@gmail.com";
+      ignores = [ ".DS_Store" ];
+      extraConfig = {
+	init.defaultBranch = "main";
+	push.autoSetupRemote = true;
+      };
+    };
+  };  in
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
@@ -127,7 +163,13 @@
             # User owning the Homebrew prefix
             user = "raulcamacho";
           };
-        }
+       }
+       home-manager.darwinModules.home-manager
+       {
+	  home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.raulcamacho = homeconfig;
+       }
       ];
     };
 

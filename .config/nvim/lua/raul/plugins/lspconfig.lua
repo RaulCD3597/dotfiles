@@ -195,6 +195,7 @@ return { -- LSP Configuration & Plugins
 			"eslint_d",
 			"golangci-lint",
 			"flake8",
+			"nixpkgs-fmt",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
