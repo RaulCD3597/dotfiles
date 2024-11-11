@@ -23,7 +23,7 @@ SPACE=(
 )
 
 sid=0
-for i in "${!SPACE_ICONS[@]}"
+for i in $(aerospace list-workspaces --all)
 do
   sid=$(($i+1))
   sketchybar --add space space.$sid left

@@ -22,10 +22,13 @@ in
     home.homeDirectory = "/Users/raulcamacho";
     xdg.enable = true;
 
-    xdg.configFile.nvim.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/nvim";
-    xdg.configFile.alacritty.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/alacritty";
-    xdg.configFile.starship.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/starship";
-    xdg.configFile.sketchybar.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/sketchybar";
+    xdg.configFile = {
+      nvim.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/nvim";
+      alacritty.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/alacritty";
+      starship.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/starship";
+      sketchybar.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/sketchybar";
+      aerospace.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/aerospace";
+    };
     home.file = {
       ".zshrc".source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.zshrc";
       ".tmux.conf".source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.tmux.conf";
