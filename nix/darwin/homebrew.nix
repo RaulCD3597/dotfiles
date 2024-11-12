@@ -5,9 +5,12 @@
 	upgrade = true;
     };
     taps = [
+	"FelixKratz/formulae"
+	"nikitabobko/tap"
     ];
     brews = [
 	"mas"
+	"sketchybar"
     ];
     casks = [
 	"docker"
