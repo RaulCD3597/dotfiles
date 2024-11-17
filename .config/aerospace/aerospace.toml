@@ -61,7 +61,7 @@ inner.horizontal = 6
 inner.vertical =   6
 outer.left =       6
 outer.bottom =     6
-outer.top =        10
+outer.top =        [{ monitor.main = 10 }, 43]
 outer.right =      6
 
 # 'main' binding mode declaration
@@ -142,6 +142,8 @@ r = ['flatten-workspace-tree', 'mode main'] # reset layout
 #s = ['layout sticky tiling', 'mode main'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
+shift-n = ['move-workspace-to-monitor next', 'mode main']
+n = ['move-workspace-to-monitor prev', 'mode main']
 
 alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']

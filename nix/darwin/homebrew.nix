@@ -11,6 +11,7 @@
     brews = [
 	"mas"
 	"sketchybar"
+	"qmk/qmk/qmk"
     ];
     casks = [
 	"docker"
@@ -19,6 +20,7 @@
 	"font-sf-pro"
 	"sf-symbols"
 	"nikitabobko/tap/aerospace"
+	"qmk-toolbox"
     ];
     masApps = {
 	"Xcode" = 497799835;
