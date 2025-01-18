@@ -25,9 +25,10 @@
 	dock = {
 	    autohide = true;
 	    persistent-apps = [
-	      "/Applications/Android Studio.app"
-	      "/Applications/Xcode.app"
-	      "/Applications/Safari.app"
+		"/Applications/Ghostty.app"
+		"/Applications/Android Studio.app"
+		"/Applications/Xcode.app"
+		"/Applications/Safari.app"
 	    ];
 	};
 	finder.FXPreferredViewStyle = "clmv";
