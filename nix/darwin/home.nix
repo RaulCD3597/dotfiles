@@ -24,10 +24,8 @@ in
 
     xdg.configFile = {
       nvim.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/nvim";
-      alacritty.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/alacritty";
       starship.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/starship";
-      sketchybar.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/sketchybar";
-      aerospace.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/aerospace";
+      ghostty.source =  mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/ghostty";
     };
     home.file = {
       ".zshrc".source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.zshrc";

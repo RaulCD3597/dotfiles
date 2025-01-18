@@ -6,7 +6,6 @@
 	pkgs.mkalias
 	pkgs.neovim
 	pkgs.tmux
-	pkgs.alacritty
 	pkgs.go
 	pkgs.starship
 	pkgs.fzf
@@ -22,15 +21,10 @@
 
     homebrew = import ./homebrew.nix // { enable = true; };
 
-    fonts.packages = [
-	(pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    ];
-
     system.defaults = {
 	dock = {
 	    autohide = true;
 	    persistent-apps = [
-	      "${pkgs.alacritty}/Applications/Alacritty.app"
 	      "/Applications/Android Studio.app"
 	      "/Applications/Xcode.app"
 	      "/Applications/Safari.app"
