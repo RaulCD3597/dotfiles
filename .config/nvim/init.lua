@@ -1,2 +1,2 @@
-require("raul.core")
-require("raul.lazy")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")

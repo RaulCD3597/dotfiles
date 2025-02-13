@@ -23,13 +23,13 @@ in
     xdg.enable = true;
 
     xdg.configFile = {
-      nvim.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/nvim";
-      starship.source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/starship";
-      ghostty.source =  mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.config/ghostty";
+      nvim.source = mkOutOfStoreSymlink "/Users/raulcamacho/.dotfiles/.config/nvim";
+      starship.source = mkOutOfStoreSymlink "/Users/raulcamacho/.dotfiles/.config/starship";
+      ghostty.source =  mkOutOfStoreSymlink "/Users/raulcamacho/.dotfiles/.config/ghostty";
     };
     home.file = {
-      ".zshrc".source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.zshrc";
-      ".tmux.conf".source = mkOutOfStoreSymlink "/Users/raulcamacho/dotfiles/.tmux.conf";
+      ".zshrc".source = mkOutOfStoreSymlink "/Users/raulcamacho/.dotfiles/.zshrc";
+      ".tmux.conf".source = mkOutOfStoreSymlink "/Users/raulcamacho/.dotfiles/.tmux.conf";
     };
    
     programs.git = {
