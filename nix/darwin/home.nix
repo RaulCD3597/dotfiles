@@ -34,7 +34,7 @@ in
    
     programs.git = {
       enable = true;
-      userName = "Raul Camacho";
+      userName = "RaulCD3597";
       userEmail = "raulcd3597@gmail.com";
       ignores = [ ".DS_Store" ];
       extraConfig = {

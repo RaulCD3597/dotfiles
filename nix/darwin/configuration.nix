@@ -17,6 +17,7 @@
 	pkgs.discord
 	pkgs.flutter
 	pkgs.cargo
+	pkgs.wget
     ];
 
     homebrew = import ./homebrew.nix // { enable = true; };
