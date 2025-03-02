@@ -12,6 +12,7 @@
 	"mas"
 	"qmk/qmk/qmk"
 	"python-tk"
+  "go"
     ];
     casks = [
 	"docker"
