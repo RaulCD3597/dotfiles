@@ -74,3 +74,5 @@ export PATH=$PATH:"$HOME/go/bin"
 export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jbr/Contents/Home
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+
+export PATH=$PATH:/opt/homebrew/opt/postgresql@15/bin
