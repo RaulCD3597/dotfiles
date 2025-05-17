@@ -3,42 +3,44 @@
     # List packages installed in system profile. To search by name, run:
     # $ nix-env -qaP | grep wget
     environment.systemPackages = [
-	pkgs.mkalias
-	pkgs.neovim
-	pkgs.tmux
-	pkgs.starship
-	pkgs.fzf
-	pkgs.zoxide
-	pkgs.nodejs_20
-	pkgs.ripgrep
-	pkgs.lazygit
-	pkgs.cocoapods
-	pkgs.discord
-	pkgs.flutter
-	pkgs.cargo
-	pkgs.wget
+      pkgs.mkalias
+      pkgs.neovim
+      pkgs.tmux
+      pkgs.starship
+      pkgs.fzf
+      pkgs.zoxide
+      pkgs.nodejs_20
+      pkgs.ripgrep
+      pkgs.lazygit
+      pkgs.cocoapods
+      pkgs.discord
+      pkgs.flutter
+      pkgs.cargo
+      pkgs.wget
+      pkgs.tldr
+      pkgs.xh
     ];
 
     homebrew = import ./homebrew.nix // { enable = true; };
 
     system.defaults = {
-	dock = {
-	    autohide = true;
-	    persistent-apps = [
-		"/Applications/Ghostty.app"
-		"/Applications/Android Studio.app"
-		"/Applications/Xcode.app"
-		"/Applications/Safari.app"
-	    ];
-	};
-	finder.FXPreferredViewStyle = "clmv";
-	loginwindow.GuestEnabled = false;
-	NSGlobalDomain = {
-	    AppleICUForce24HourTime = true;
-	    AppleInterfaceStyle = "Dark";
-	    "com.apple.swipescrolldirection" = false;
-	    _HIHideMenuBar = true;
-	};
+      dock = {
+        autohide = true;
+        persistent-apps = [
+          "/Applications/Ghostty.app"
+          "/Applications/Android Studio.app"
+          "/Applications/Xcode.app"
+          "/Applications/Safari.app"
+        ];
+      };
+      finder.FXPreferredViewStyle = "clmv";
+      loginwindow.GuestEnabled = false;
+      NSGlobalDomain = {
+        AppleICUForce24HourTime = true;
+        AppleInterfaceStyle = "Dark";
+        "com.apple.swipescrolldirection" = false;
+        _HIHideMenuBar = true;
+      };
     };
 
     # Auto upgrade nix package and the daemon service.
@@ -61,7 +63,7 @@
     nixpkgs.hostPlatform = "aarch64-darwin";
 
     users.users.raulcamacho = {
-	name = "raulcamacho";
-	home = "/Users/raulcamacho";
+      name = "raulcamacho";
+      home = "/Users/raulcamacho";
     };
 }

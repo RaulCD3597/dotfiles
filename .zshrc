@@ -76,3 +76,4 @@ export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
 export PATH=$PATH:/opt/homebrew/opt/postgresql@15/bin
+export EDITOR=nvim

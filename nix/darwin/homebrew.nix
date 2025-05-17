@@ -13,9 +13,8 @@
     "qmk/qmk/qmk"
     "python-tk"
     "go"
-    "postgresql@15"
-    "awscli"
-    "ffmpeg"
+    "kubectl"
+    "minikube"
   ];
   casks = [
     "docker"

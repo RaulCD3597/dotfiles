@@ -5,7 +5,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    # nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nix-homebrew.url = "git+https://github.com/zhaofengli/nix-homebrew?ref=refs/pull/71/merge";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     mac-app-util.url = "github:hraban/mac-app-util";
@@ -17,14 +18,14 @@
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."mbpro" = nix-darwin.lib.darwinSystem {
       modules = [
-	./configuration.nix
+        ./configuration.nix
         {
           # Set Git commit hash for darwin-version.
           system.configurationRevision = self.rev or self.dirtyRev or null;
         }
-	mac-app-util.darwinModules.default
-	nix-homebrew.darwinModules.nix-homebrew
-	{
+        mac-app-util.darwinModules.default
+        nix-homebrew.darwinModules.nix-homebrew
+        {
           nix-homebrew = {
             enable = true;
             # Apple Silicon Only
@@ -32,14 +33,14 @@
             # User owning the Homebrew prefix
             user = "raulcamacho";
           };
-       }
-       home-manager.darwinModules.home-manager
-       {
-	  home-manager.useGlobalPkgs = true;
+        }
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-	  home-manager.verbose = true;
+          home-manager.verbose = true;
           home-manager.users.raulcamacho.imports = [ ./home.nix mac-app-util.homeManagerModules.default ];
-       }
+        }
       ];
     };
 
