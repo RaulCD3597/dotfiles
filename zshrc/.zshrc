@@ -57,7 +57,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
+alias ls='eza --color=always --long --git --no-filesize --icons=always --no-time --no-user'
 alias vim='nvim'
 alias c='clear'
 
@@ -77,3 +77,7 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/plat
 
 export PATH=$PATH:/opt/homebrew/opt/postgresql@15/bin
 export EDITOR=nvim
+
+export PATH="/opt/homebrew/opt/zip/bin:$PATH"
+export PATH="/opt/homebrew/opt/unzip/bin:$PATH"
+alias python3=python3.13
