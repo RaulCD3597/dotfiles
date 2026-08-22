@@ -1,0 +1,6 @@
+# Runtime state, not config
+*.log
+*.sock
+*.lock
+session.json
+sessions/

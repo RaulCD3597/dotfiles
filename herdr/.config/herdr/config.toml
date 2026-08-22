@@ -1,0 +1,30 @@
+[keys]
+prefix = "ctrl+t"
+zoom = "prefix+m"
+
+[[keys.command]]
+key = "ctrl+h"
+type = "shell"
+command = "\"$HOME/.config/herdr/scripts/navigate.sh\" left"
+description = "smart navigate left (nvim-aware)"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "shell"
+command = "\"$HOME/.config/herdr/scripts/navigate.sh\" down"
+description = "smart navigate down (nvim-aware)"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "shell"
+command = "\"$HOME/.config/herdr/scripts/navigate.sh\" up"
+description = "smart navigate up (nvim-aware)"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "shell"
+command = "\"$HOME/.config/herdr/scripts/navigate.sh\" right"
+description = "smart navigate right (nvim-aware)"
+
+[theme]
+name = "catppuccin"
