@@ -28,3 +28,6 @@ description = "smart navigate right (nvim-aware)"
 
 [theme]
 name = "catppuccin"
+
+[ui]
+sidebar_start_collapsed = true
