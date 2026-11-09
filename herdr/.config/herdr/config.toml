@@ -1,6 +1,8 @@
+onboarding = false
 [keys]
 prefix = "ctrl+t"
 zoom = "prefix+m"
+split_vertical = "prefix+|"
 
 [[keys.command]]
 key = "ctrl+h"
@@ -31,3 +33,9 @@ name = "catppuccin"
 
 [ui]
 sidebar_start_collapsed = true
+
+[ui.toast]
+delivery = "herdr"
+
+[ui.sound]
+enabled = false
